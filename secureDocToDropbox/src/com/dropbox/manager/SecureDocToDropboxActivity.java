@@ -44,7 +44,7 @@ public class SecureDocToDropboxActivity extends Activity {
     		auth.mDBApi.getSession().setAccessTokenPair(tokens);
     	}
     	
-        //upload = new upLoadFile(this);
+        upload = new upLoadFile(this);
         
     }
     
