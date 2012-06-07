@@ -3,6 +3,8 @@ package com.dropbox.manager;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -52,6 +54,24 @@ public class SecureDocToDropboxActivity extends Activity {
     	
         upload = new upLoadFile(this);
         
+        callBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+        
+        // 등록하기 버튼 클릭시에는 글을 등록할 수 있도록 함
+        addBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
     }
     
     @Override
