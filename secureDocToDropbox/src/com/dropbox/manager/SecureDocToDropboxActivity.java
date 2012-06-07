@@ -3,11 +3,10 @@ package com.dropbox.manager;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ListView;
 
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.android.AndroidAuthSession;
 import com.dropbox.client2.session.AccessTokenPair;
-import com.dropbox.client2.session.AppKeyPair;
 import com.dropbox.manager.common.authenticationDropBox;
 
 import fileAccess.upLoadFile;
@@ -20,15 +19,22 @@ public class SecureDocToDropboxActivity extends Activity {
     public boolean isFirstTime = false;
     public static SharedPreferences prefs;
     
+    public Button callBtn;
+    public Button addBtn;
+    public ListView dropboxList;
+    
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(com.dropbox.manager.R.layout.main);
         
     	// auth 성공의 경우 Key를 저장하여 더이상 부르지 않는다.
     	prefs = getSharedPreferences(authenticationDropBox.ACCOUNT_PREFS_NAME, 0);
     	key_name = prefs.getString(authenticationDropBox.ACCESS_KEY_NAME, "");
     	key_sec_name = prefs.getString(authenticationDropBox.ACCESS_SECRETKEY_NAME, "");
+    	
+    	
+    	
     	
     	if(key_name.equalsIgnoreCase("")||key_sec_name.equalsIgnoreCase(""))
     		isFirstTime = true;
